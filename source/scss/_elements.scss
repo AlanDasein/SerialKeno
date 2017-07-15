@@ -1,0 +1,40 @@
+.container {
+  margin: auto;
+  width: $page_wd;
+}
+
+.icon {width: 28px;}
+
+.grid {
+  width: $grid_wd;
+  .msg {
+    padding: $msg_pd;
+    height: $msg_pd * 2;
+  }
+}
+
+.box {
+  border: 2px solid $cl_secundary;
+  padding: $box_pd;
+  div {
+    border-bottom: 1px dotted darken($cl_primary, 30%);
+    margin-bottom: $box_line_mg;
+    padding: $box_line_pd;
+    width: $box_wd;
+  }
+  div:last-child {
+    border: none;
+    margin: 0;
+  }
+  label {
+    font-style: italic;
+    font-weight: bold;
+    color: darken($cl_primary, 10%);
+  }
+  p {
+    background: $cl_secundary;
+    margin: $box_caption_mg;
+    padding: $box_caption_pd;
+    color: $button_cl;
+  }
+}

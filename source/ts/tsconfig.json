@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "target": "es5",
+    "sourceRoot": "/Applications/XAMPP/htdocs/user/Games/Keno/Serial Keno/source/ts/",
+    "outFile": "/Applications/XAMPP/htdocs/user/Games/Keno/Serial Keno/files/js/scripts.js",
+    "sourceMap": false,
+    "removeComments": true
+  },
+  "files": [
+    "Game.ts",
+    "Dom.ts",
+    "Main.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="format-detection" content="telephone=no">
+    <title>Serial Keno</title>
+    <link type="text/css" rel="stylesheet" href="files/css/styles.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1 class="title">serial <span>keno</span></h1>
+
+            <menu>
+                <button class="clickable">PLAY</button>
+                <button class="clickable">AUTO</button>
+                <button class="clickable">SPEED&nbsp;<span>))<label>)</label></span></button>
+                <button class="clickable">BET ONE</button>
+                <button class="clickable">BET MAX</button>
+                <img src="files/assets/img/audio.png" class="cl-right icon clickable" />
+            </menu>
+
+        </header>
+
+        <div class="content">
+
+            <section class="cl-left grid">
+
+                <table class="textcentered">
+                    <tr>
+                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td><td class="selected">22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                    </tr>
+                    <tr>
+                        <td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td><td>40</td>
+                    </tr>
+                </table>
+
+                <div class="msg textcentered">Place a bet or press Play</div>
+
+                <table class="textcentered">
+                    <tr>
+                        <td>41</td><td class="selected">42</td><td class="selected">43</td><td>44</td><td>45</td><td>46</td><td>47</td><td>48</td><td>49</td><td>50</td>
+                    </tr>
+                    <tr>
+                        <td>51</td><td>52</td><td>53</td><td>54</td><td>55</td><td>56</td><td>57</td><td>58</td><td>59</td><td>60</td>
+                    </tr>
+                    <tr>
+                        <td>61</td><td>62</td><td>63</td><td>64</td><td>65</td><td>66</td><td>67</td><td>68</td><td>69</td><td>70</td>
+                    </tr>
+                    <tr>
+                        <td>71</td><td>72</td><td>73</td><td>74</td><td>75</td><td>76</td><td>77</td><td>78</td><td>79</td><td>80</td>
+                    </tr>
+                </table>
+
+                <h2>Game Rules</h2>
+
+                <p>
+                    In Serial Keno you bet for how many consecutive numbers appear on the board after 20 numbers get selected randomly and without replacement from a total of 80 numbers.
+                </p>
+
+            </section>
+
+            <section class="cl-right">
+
+                <div class="box">
+
+                    <div>
+                        <span>CREDITS</span>
+                        <label class="cl-right">1000</label>
+                    </div>
+
+                    <div>
+                        <span>BET</span>
+                        <label class="cl-right">20</label>
+                    </div>
+
+                    <div>
+                        <span>COUNT</span>
+                        <label class="cl-right mark">1</label>
+                    </div>
+
+                    <div>
+                        <span>PAY</span>
+                        <label class="cl-right mark">0</label>
+                    </div>
+
+                </div>
+
+                <div class="box">
+
+                    <p>PAY TABLE</p>
+
+                    <div>
+                        <span>Longest run is 4</span>
+                        <label class="cl-right">2</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 5</span>
+                        <label class="cl-right">5</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 6</span>
+                        <label class="cl-right">25</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 7</span>
+                        <label class="cl-right">100</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 8</span>
+                        <label class="cl-right">500</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 9</span>
+                        <label class="cl-right">1000</label>
+                    </div>
+
+                    <div>
+                        <span>Longest run is 10</span>
+                        <label class="cl-right">5,000</label>
+                    </div>
+
+                    <div>
+                        <span>Longer than 10</span>
+                        <label class="cl-right">10,000</label>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="cl-clear"></div>
+
+            <p class="block">
+                The game pays according to the longest sequence to show up. For example, if theLongest run is  is a string of numbers from 2 to 10, the longest run is 9 and you get paid if the pay table has a corresponding payment.
+                <br><br/>
+                In addition, number 80 is linked to number 1. So numbers from 78 to 80 and from 1 to 5 make up a serie of 8 consecutive numbers.
+            </p>
+
+        </div>
+
+        <footer class="textcentered">
+            <a href="https://www.facebook.com/allcrossword/" target="_blank">DO YOU LIKE THIS GAME? CLICK HERE TO CONTACT ME ON FACEBOOK</a>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "files/js/scripts.js";
+            element.type = "text/javascript";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
+
+</body>
+</html>
