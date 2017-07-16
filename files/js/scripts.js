@@ -47,7 +47,7 @@ var Game = (function () {
             series.push(series[series.length - 1].concat(series[0]));
         }
         this.count = this.matches(series);
-        this.pay = this.bet.current * this.paytable[this.count].val;
+        this.pay = this.bet.current * this.paytable[this.count >= this.paytable.length ? this.paytable.length - 1 : this.count].val;
     };
     Game.manageBet = function () {
         if (this.bet.max > this.credits + this.bet.current) {

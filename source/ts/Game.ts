@@ -90,7 +90,7 @@ class Game {
         series.push(filter);
         if(this.lastAndFirstLinked()) {series.push(series[series.length - 1].concat(series[0]));}
         this.count = this.matches(series);
-        this.pay = this.bet.current * this.paytable[this.count].val;
+        this.pay = this.bet.current * this.paytable[this.count >= this.paytable.length ? this.paytable.length - 1 : this.count].val;
     }
 
     public static manageBet(): void {
