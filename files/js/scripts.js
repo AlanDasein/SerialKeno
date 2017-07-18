@@ -17,9 +17,8 @@ var Game = (function () {
     };
     Game.pickNumber = function () {
         var pick = 0;
-        if (this.demo.length > 0) {
-            this.numbers.selected.push(this.demo[0]);
-            this.demo.shift();
+        if (this.demo > 0) {
+            this.numbers.selected.push(this.demo--);
         }
         else {
             while (pick === 0 || this.numbers.selected.indexOf(pick) >= 0) {
@@ -96,12 +95,12 @@ var Game = (function () {
     Game.playing = false;
     Game.bet = { "def": 10, "max": 10, "current": 0, "session": 0 };
     Game.numbers = { "set": 80, "subset": 20, "selected": [] };
-    Game.credits = 100;
+    Game.credits = 1000;
     Game.audio = true;
     Game.count = 0;
     Game.messages = 0;
     Game.draws = 0;
-    Game.demo = [];
+    Game.demo = 0;
     return Game;
 }());
 var Dom = (function () {

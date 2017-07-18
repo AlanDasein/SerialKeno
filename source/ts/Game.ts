@@ -33,7 +33,7 @@ class Game {
 
     public static numbers: {set: number, subset: number, selected: number[]} = {"set": 80, "subset": 20, "selected": []};
 
-    public static credits: number = 100;
+    public static credits: number = 1000;
 
     public static audio: boolean = true;
 
@@ -43,7 +43,7 @@ class Game {
 
     public static draws: number = 0;
 
-    public static demo: number[] = [];
+    public static demo: number = 0;
 
     // functions
 
@@ -63,10 +63,7 @@ class Game {
 
     public static pickNumber(): void {
         var pick: number = 0;
-        if(this.demo.length > 0) {
-            this.numbers.selected.push(this.demo[0]);
-            this.demo.shift();
-        }
+        if(this.demo > 0) {this.numbers.selected.push(this.demo--);}
         else {
             while(pick === 0 || this.numbers.selected.indexOf(pick) >= 0) {pick = this.random(1, this.numbers.set);}
             this.numbers.selected.push(pick);
