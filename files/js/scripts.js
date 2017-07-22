@@ -124,17 +124,16 @@ var Dom = (function () {
         }
         else {
             for (var i = start; i < end; i++) {
-                if (block === 1 || collection[i].val > 0) {
-                    elm[0] = document.createElement("div");
-                    target.appendChild(elm[0]);
-                    elm[1] = document.createElement("span");
-                    elm[1].innerHTML = block === 1 ? collection[i] : collection[i].label;
-                    elm[0].appendChild(elm[1]);
-                    elm[1] = document.createElement("label");
-                    elm[1].className = "cl-right" + (block === 1 ? " info" : "");
-                    elm[1].innerHTML = block === 1 ? "" : collection[i].val;
-                    elm[0].appendChild(elm[1]);
-                }
+                elm[0] = document.createElement("div");
+                elm[0].className = (block === 1 || collection[i].val > 0 ? "" : "hide");
+                target.appendChild(elm[0]);
+                elm[1] = document.createElement("span");
+                elm[1].innerHTML = block === 1 ? collection[i] : collection[i].label;
+                elm[0].appendChild(elm[1]);
+                elm[1] = document.createElement("label");
+                elm[1].className = "cl-right " + (block === 1 ? "info" : "pay");
+                elm[1].innerHTML = block === 1 ? "" : collection[i].val;
+                elm[0].appendChild(elm[1]);
             }
         }
     };
@@ -159,6 +158,10 @@ var Dom = (function () {
             else {
                 this.objects["buttons"][i].classList.toggle(i === 1 ? "active" : "disabled", i === 1 ? Game.auto : Game.betTopsCredits() || (i < 1 ? Game.playing || !Game.thereIsABet() : Game.playing || (Game.bet.session === 1 && Game.maxBetReached())));
             }
+        }
+        aux = Game.bet.current > 0 ? Game.bet.current : 1;
+        for (var i = 0, j = Game.paytable.length; i < j; i++) {
+            this.objects["pay"][i].innerHTML = aux * Game.paytable[i].val;
         }
     };
     Dom.cyclicMessages = function () {
@@ -244,6 +247,7 @@ var Dom = (function () {
         this.objects["cells"] = document.getElementsByTagName("TD");
         this.objects["msg"] = document.getElementsByClassName("msg")[0];
         this.objects["info"] = document.getElementsByClassName("info");
+        this.objects["pay"] = document.getElementsByClassName("pay");
         this.bind();
     };
     Dom.title = "serial <span>keno</span>";

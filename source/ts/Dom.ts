@@ -60,17 +60,16 @@ class Dom {
         else {
 
             for(let i = start;i < end;i++) {
-                if(block === 1 || collection[i].val > 0) {
-                    elm[0] = document.createElement("div");
-                    target.appendChild(elm[0]);
-                    elm[1] = document.createElement("span");
-                    elm[1].innerHTML = block === 1 ? collection[i] : collection[i].label;
-                    elm[0].appendChild(elm[1]);
-                    elm[1] = document.createElement("label");
-                    elm[1].className = "cl-right" + (block === 1 ? " info" : "");
-                    elm[1].innerHTML =  block === 1 ? "" : collection[i].val;
-                    elm[0].appendChild(elm[1]);
-                }
+                elm[0] = document.createElement("div");
+                elm[0].className = (block === 1 || collection[i].val > 0 ? "" : "hide");
+                target.appendChild(elm[0]);
+                elm[1] = document.createElement("span");
+                elm[1].innerHTML = block === 1 ? collection[i] : collection[i].label;
+                elm[0].appendChild(elm[1]);
+                elm[1] = document.createElement("label");
+                elm[1].className = "cl-right " + (block === 1 ? "info" : "pay");
+                elm[1].innerHTML =  block === 1 ? "" : collection[i].val;
+                elm[0].appendChild(elm[1]);
             }
 
         }
@@ -79,7 +78,7 @@ class Dom {
 
     public static bind(): void {
 
-        var infoCollection: any[] = [Game.credits, Game.bet.current, Game.count, Game.pay], aux: string = "";
+        var infoCollection: any[] = [Game.credits, Game.bet.current, Game.count, Game.pay], aux: any = "";
 
         this.objects["audio"].src = Game.audio ? this.iconSource[0] : this.iconSource[0].replace(this.iconSource[1], this.iconSource[2]);
 
@@ -103,6 +102,10 @@ class Dom {
                 );
             }
         }
+
+        aux = Game.bet.current > 0 ? Game.bet.current : 1;
+
+        for(let i = 0, j = Game.paytable.length;i < j;i++) {this.objects["pay"][i].innerHTML = aux * Game.paytable[i].val;}
 
     }
 
@@ -214,6 +217,7 @@ class Dom {
         this.objects["cells"] = document.getElementsByTagName("TD"); // grid's cells
         this.objects["msg"] = document.getElementsByClassName("msg")[0]; // cyclic messages
         this.objects["info"] = document.getElementsByClassName("info"); // info panel
+        this.objects["pay"] = document.getElementsByClassName("pay"); // pay panel
 
         this.bind();
 
